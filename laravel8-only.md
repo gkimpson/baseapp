@@ -18,5 +18,8 @@ App\Models\User::factory()->for(Tenant::factory())->count(10)->create();
 // creates 10 users and 10 tenants
 App\Models\User::factory()->count(10)->create();
 
+// create 10 users attached to tenant 1
+App\Models\User::factory()->count(10)->create(['tenant_id' => 1]);
+
 shortcut...
 User::factory()->create();
