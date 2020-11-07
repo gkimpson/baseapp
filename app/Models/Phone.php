@@ -1,12 +1,12 @@
 <?php
 
-namespace {{ namespace }};
+namespace App\Models;
 
+use App\Scopes\TenantScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Scopes\TenantScope;
 
-class {{ class }} extends Model
+class Phone extends Model
 {
     use HasFactory;
 

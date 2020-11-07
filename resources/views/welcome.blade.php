@@ -39,6 +39,7 @@
                         {{ config('app.name') }}
                     </h1>
 
+                    <livewire:department-form />
                     {{ \App\Models\User::count() }}<br>
 {{--                    {{ \App\Models\User::where('tenant_id', 1)->count() }}--}}
 
