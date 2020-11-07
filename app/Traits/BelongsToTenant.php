@@ -1,16 +1,22 @@
 <?php
 
-namespace App\Models;
+
+namespace App\Traits;
 
 use App\Scopes\TenantScope;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
-class Phone extends Model
+trait BelongsToTenant
 {
-    use HasFactory;
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
 
-    protected static function booted()
+    protected static function bootBelongsToTenant()
     {
         static::addGlobalScope(new TenantScope);
 
