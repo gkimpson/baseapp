@@ -1,3 +1,4 @@
+EP7 S3 Amazon Uploads
 // User Model
 public function tenant() { return $this->belongsTo(Tenant::class); }
 
