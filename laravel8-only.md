@@ -1,4 +1,4 @@
-EP7 S3 Amazon Uploads
+EP7 S3 Amazon Uploads - problem with livewire $photo to passing to view
 // User Model
 public function tenant() { return $this->belongsTo(Tenant::class); }
 
