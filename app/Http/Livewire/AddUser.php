@@ -3,9 +3,11 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class AddUser extends Component
 {
+    use WithFileUploads;
     public $name = "Kevin McKee";
     public $email = "kevin@lc.com";
     public $department = 'information_technology';
@@ -13,6 +15,15 @@ class AddUser extends Component
     public $photo;
     public $status = 1;
     public $role = 'admin';
+
+    public function save()
+    {
+        $this->validate([
+            'photo' => 'image|max:1024', // 1MB Max
+        ]);
+
+        $this->photo->store('photos');
+    }
 
     public function submit()
     {

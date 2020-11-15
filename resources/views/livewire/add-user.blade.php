@@ -46,7 +46,11 @@
                         </svg>
                     </div>
                     <div>
-                        <input type="file">
+                        <input type="file" wire:model="photo">
+
+                        @error('photo') <span class="error">{{ $message }}</span> @enderror
+
+                        <button wire:click="save">Save Photo</button>
                     </div>
                 </div>
             </div>
