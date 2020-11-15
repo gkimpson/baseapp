@@ -132,11 +132,19 @@
                         <tr>
                             <td class="px-6 py-4 whitespace-no-wrap">
                                 <div class="flex items-center">
-                                    <div class="flex-shrink-0 h-10 w-10">
-                                        <img class="h-10 w-10 rounded-full"
-                                             src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                             alt="">
-                                    </div>
+                                    @if($photo)
+                                        <div class="flex-shrink-0 h-10 w-10">
+                                            <img class="h-10 w-10 rounded-full"
+                                                 src="{{ $photo->temporaryUrl() }}"
+                                                 alt="">
+                                        </div>
+                                    @else
+                                        <div class="flex-shrink-0 h-10 w-10">
+                                            <img class="h-10 w-10 rounded-full"
+                                                 src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                                 alt="">
+                                        </div>
+                                    @endif
                                     <div class="ml-4">
                                         <div class="text-sm leading-5 font-medium text-gray-900">Bernard Lane</div>
                                         <div class="text-sm leading-5 text-gray-500">bernardlane@example.com</div>
